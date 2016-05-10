@@ -29,10 +29,10 @@ class UtilisateursController extends Controller
         $html = $this->renderView('UtilisateursBundle:Default:layout/facturePDF.html.twig', array('facture' => $facture));
         
         $html2pdf = new \Html2Pdf_Html2Pdf('P','A4','fr');
-        $html2pdf->pdf->SetAuthor('DevAndClick');
+        $html2pdf->pdf->SetAuthor('Guillaume');
         $html2pdf->pdf->SetTitle('Facture '.$facture->getReference());
-        $html2pdf->pdf->SetSubject('Facture DevAndClick');
-        $html2pdf->pdf->SetKeywords('facture,devandclick');
+        $html2pdf->pdf->SetSubject('Facture Guillaume');
+        $html2pdf->pdf->SetKeywords('facture,Guillaume');
         $html2pdf->pdf->SetDisplayMode('real');
         $html2pdf->writeHTML($html);
         $html2pdf->Output('Facture.pdf');
